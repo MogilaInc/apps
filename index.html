@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apps Lab</title>
+  <meta name="description" content="A small collection of home-built apps and prototypes.">
+  <!-- Keeps the page out of Google. Remove this line when you want it to be found. -->
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+    :root {
+      --bg: #f7f6f3;
+      --card: #ffffff;
+      --text: #1d1d1f;
+      --muted: #6b6b70;
+      --accent: #2f5bea;
+      --border: #e4e2dd;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #141416;
+        --card: #1e1e21;
+        --text: #f2f2f4;
+        --muted: #9a9aa2;
+        --accent: #7c9bff;
+        --border: #2c2c31;
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    main {
+      max-width: 880px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 72px 24px 48px;
+      flex: 1;
+    }
+    .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    h1 {
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .lead {
+      font-size: 1.125rem;
+      color: var(--muted);
+      max-width: 620px;
+      margin-bottom: 48px;
+    }
+    h2 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      display: block;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.15s ease, border-color 0.15s ease;
+    }
+    .card:hover { transform: translateY(-2px); border-color: var(--accent); }
+    .card .icon { font-size: 1.6rem; margin-bottom: 10px; }
+    .card h3 { font-size: 1.05rem; margin-bottom: 6px; }
+    .card p { font-size: 0.92rem; color: var(--muted); }
+    .card .status {
+      display: inline-block;
+      margin-top: 14px;
+      font-size: 0.75rem;
+      padding: 2px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+    .note {
+      margin-top: 48px;
+      padding: 18px 20px;
+      border-left: 3px solid var(--accent);
+      background: var(--card);
+      border-radius: 0 10px 10px 0;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+      padding: 24px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <span class="tag">Apps Lab</span>
+    <h1>Small apps, built with AI, tested in the open.</h1>
+    <p class="lead">
+      This is a playground for home-built web apps and mockups. Each one started as an idea,
+      was built with the help of AI, and lives here so it can be tried, shared and improved.
+    </p>
+
+    <h2>The apps</h2>
+    <div class="grid">
+      <!-- Copy one card per app. The href is the folder name in the repo. -->
+      <a class="card" href="./budget/">
+        <div class="icon">📊</div>
+        <h3>Budget</h3>
+        <p>A simple monthly budget tracker.</p>
+        <span class="status">Prototype</span>
+      </a>
+
+      <a class="card" href="./booking/">
+        <div class="icon">📅</div>
+        <h3>Booking</h3>
+        <p>Book a shared room or resource in a few clicks.</p>
+        <span class="status">Mockup</span>
+      </a>
+
+      <a class="card" href="./app-three/">
+        <div class="icon">🧪</div>
+        <h3>Next experiment</h3>
+        <p>Replace this with a short description of your next app.</p>
+        <span class="status">Coming soon</span>
+      </a>
+    </div>
+
+    <p class="note">
+      These are experiments, not finished products. Please don't enter real personal or sensitive
+      data. Any data you type stays in your own browser.
+    </p>
+  </main>
+
+  <footer>
+    Apps Lab &middot; <span id="year"></span>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
